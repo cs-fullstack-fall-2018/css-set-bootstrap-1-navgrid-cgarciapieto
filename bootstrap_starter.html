@@ -1,28 +1,36 @@
+<!-- Dang, if even one comment, might have brought you Chik-fil-a! :-P -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap Navbars</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <style type="text/css">
-    body { padding-top: 70px; }
-    .jumbotron {
-      color: #2c3e50;
-      background: #ecf0f1;
+    <title>Bootstrap Navbars</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style type="text/css">
+        body {
+            padding-top: 70px;
+        }
 
-    }
-    .navbar-inverse {
-      background: #2c3e50;
-      color: white;
-    }
-    .navbar-inverse .navbar-brand, .navbar-inverse a{
-      color:white;
-    }
-    .navbar-inverse .navbar-nav>li>a {
-      color: white;
-    }
+        .jumbotron {
+            color: #2c3e50;
+            background: #ecf0f1;
 
-  </style>
+        }
+
+        .navbar-inverse {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .navbar-inverse .navbar-brand, .navbar-inverse a {
+            color: white;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: white;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -35,149 +43,141 @@
 
 -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> IMGS</a>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> IMGS</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+            <ul class="nav navbar-nav">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-nav-demo">
-      <ul class="nav navbar-nav">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Login</a></li>
-      </ul>
-    </div>
-  </div>
 </nav>
 
 
-
-<div class = "container">
-  <div class ="jumbotron">
-    <h1> Some Beautiful Pictures</h1>
-  </div>
-
-
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-6">
-      <a href="#" class="thumbnail">
-        <img src="http://i.imgur.com/qK42fUu.jpg">
-      </a>
+<div class="container">
+    <div class="jumbotron">
+        <h1> Some Beautiful Pictures</h1>
     </div>
 
-  </div>
+
+    <!--
+        KEY: Your only issue was you created a 'row' for each image so they would always be one/row.
+
+        With the Bootstrap grid system, only create a new row when you want to force a truly new row, like when
+        putting a groupd of components on it's own line. Here, we just want the images laid out to fit, and they are all of the same type (e.g. all images
+        as opposed to a combination of images, text, form elements, whatever...).
+
+        We can just then make one big row and let the grid system handle the rest as far as positioning.
+
+        Other than that,nice job. You even got the thumbnail style applied in a different way than I expected. Nice!
+
+        Only other thing I did is change the class for 12-slot ratio just so you could get 3 per row tops and could get more action as you resized the window.
+
+        Well done!
+
+        -->
 
 
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-      </a>
+    <div class="row"> <!-- Just need one row and not one row per image else that's exactly what you will get (and were getting) -->
+         <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="http://i.imgur.com/qK42fUu.jpg">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1439524970634-649c37a69e5c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1450&h=825&fit=crop&s=bfda9916c885869b43b70738693428d9">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1444090542259-0af8fa96557e?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1434543177303-ef2cc7707e0d?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1436262513933-a0b06755c784?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+            <a href="#" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+
+            </a>
+        </div>
     </div>
 
-  </div>
 
+    <!--
+        Create a Jumbotron >HERE< with a title of 'The Image Gallery' with a subtitle underneath of 'Some Beautiful Images'
+    -->
 
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-      </a>
-    </div>
+    <!--
+      Use the image URLs below for each 9 images.
 
-  </div>
-
-
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1439524970634-649c37a69e5c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1450&h=825&fit=crop&s=bfda9916c885869b43b70738693428d9">
-      </a>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1444090542259-0af8fa96557e?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-      </a>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1434543177303-ef2cc7707e0d?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-      </a>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1436262513933-a0b06755c784?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-      </a>
-    </div>
-
-  </div>
-
-
-
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-      </a>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <a href="#" class="thumbnail">
-        <img src="https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-      </a>
-    </div>
-
-  </div>
-
-
-
-
-	<!--
-		Create a Jumbotron >HERE< with a title of 'The Image Gallery' with a subtitle underneath of 'Some Beautiful Images'
-	-->
-
-  <!--
-	Use the image URLs below for each 9 images.
-
-       <img src="http://i.imgur.com/qK42fUu.jpg">
-        <img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-        <img src="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-        <img src="https://images.unsplash.com/photo-1439524970634-649c37a69e5c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1450&h=825&fit=crop&s=bfda9916c885869b43b70738693428d9">
-        <img src="https://images.unsplash.com/photo-1444090542259-0af8fa96557e?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-        <img src="https://images.unsplash.com/photo-1434543177303-ef2cc7707e0d?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-        <img src="https://images.unsplash.com/photo-1436262513933-a0b06755c784?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-        <img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-        <img src="https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-  -->
- <!-- Providing you the includes required for jQuery and JavaScript -->
-  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+         <img src="http://i.imgur.com/qK42fUu.jpg">
+          <img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+          <img src="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+          <img src="https://images.unsplash.com/photo-1439524970634-649c37a69e5c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1450&h=825&fit=crop&s=bfda9916c885869b43b70738693428d9">
+          <img src="https://images.unsplash.com/photo-1444090542259-0af8fa96557e?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+          <img src="https://images.unsplash.com/photo-1434543177303-ef2cc7707e0d?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+          <img src="https://images.unsplash.com/photo-1436262513933-a0b06755c784?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+          <img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+          <img src="https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+    -->
+    <!-- Providing you the includes required for jQuery and JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
 
